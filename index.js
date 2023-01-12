@@ -79,7 +79,24 @@ function updateSearch() {
 
     let options = { nameOpt, gameSeriesOpt, amiiboSeriesOpt };
     //console.log(`Will search for ${searchString}`);
-    console.log(`Will search for ${searchString}`, options);
+    //console.log(`Will search for ${searchString}`, options);
     //filterAmiibos(searchString, outPutElement);
     filterAmiibos(searchString, outPutElement, options);
+}
+
+document.getElementById("openAll").addEventListener('click', () => {
+    toggleDetails("open");
+});
+
+document.getElementById("closeAll").addEventListener('click', () => {
+    toggleDetails("close");
+});
+
+function toggleDetails(mode) {
+    let detailsElements = document.querySelectorAll("details");
+    //console.log(detailsElements.length); 
+    for (let element of detailsElements) {
+        if (mode==="open") element.setAttribute('open', true);
+        if (mode==="close") element.removeAttribute('open');
+    }
 }

@@ -38,7 +38,7 @@ function listAmiibos(amiibos, out) {
 }
 
 export function filterAmiibos (str, out, options) {
-    console.log({str, out, options, amiibos});
+    //console.log({str, out, options, amiibos});
     const result = amiibos.filter((amiibo) => {
         //console.log(str, amiibo.character);
         //return amiibo.character.toLowerCase().includes(str.toLowerCase());
