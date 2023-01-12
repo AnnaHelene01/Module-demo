@@ -34,7 +34,7 @@ document.getElementById("submit-temp").addEventListener('click', () => {
 
 
 /** Currency converter */
-import { currencyConverter } from "./utils/currency.mjs";
+import { currencyConverter , getAllCurrencies } from "./utils/currency.mjs";
 
 document.getElementById("submit-currency").addEventListener('click', () => {
       const out = document.getElementById("currency-result");
@@ -44,3 +44,42 @@ document.getElementById("submit-currency").addEventListener('click', () => {
       if (amount === "") amount = 100;
       currencyConverter(amount, from, to, out);
 });
+
+
+const fromCurrencyList = document.getElementById("convertFromSymbols");
+const toCurrencyList = document.getElementById("convertToSymbols");
+
+getAllCurrencies(fromCurrencyList, toCurrencyList);
+
+
+
+/* Filter/Search Amiibos */
+import { getAllAmiibos, filterAmiibos } from "./utils/amiibo.mjs";
+
+const outPutElement = document.getElementById("amiibos");
+getAllAmiibos(outPutElement);
+
+let searchBox = document.getElementById("search-amiibos");
+searchBox.addEventListener('input', updateSearch);
+
+let nameCheckBox = document.getElementById("amiibo-name");
+nameCheckBox.addEventListener('input', updateSearch);
+
+let gameSeriesBox = document.getElementById("amiibo-game");
+gameSeriesBox.addEventListener('input', updateSearch);
+
+let amiiboSeriesBox = document.getElementById("amiibo-series");
+amiiboSeriesBox.addEventListener('input', updateSearch);
+
+function updateSearch() {
+    let searchString = searchBox.value;
+    let nameOpt = nameCheckBox.checked;
+    let gameSeriesOpt = gameSeriesBox.checked;
+    let amiiboSeriesOpt = amiiboSeriesBox.checked;
+
+    let options = { nameOpt, gameSeriesOpt, amiiboSeriesOpt };
+    //console.log(`Will search for ${searchString}`);
+    console.log(`Will search for ${searchString}`, options);
+    //filterAmiibos(searchString, outPutElement);
+    filterAmiibos(searchString, outPutElement, options);
+}

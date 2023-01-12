@@ -1,0 +1,56 @@
+body {
+    background-color: #D9D9D9;
+}
+
+span {
+    color: red;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Container */
+.container {
+    background-color: white;
+    margin: 10px;
+    padding: 20px;
+}
+
+
+/*Input style */
+input {
+    padding: 5px;
+}
+
+button {
+    padding: 5px;
+}
+
+
+/*FILTER AMIBO */
+#amiibos {
+    display: grid; 
+    grid-template-columns: auto auto auto; 
+    margin-top: 20px;
+}
+
+#search-amiibos {
+    min-width: 170px;
+}
+
+.amiibo-label {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: auto;
+}
+
+
+details {
+    border: 2px solid black;
+    padding: 20px;
+}
+
+details img {
+    text-align: center;
+}
