@@ -1,5 +1,6 @@
 # Module-demo
 ## Web packing
+#### Pakke HTML & JS
 1. Remove all in gitignore exepct this:
  Dependency directories
 node_modules/
@@ -54,5 +55,29 @@ Nå har vi pakket html og js
 
 11. Last siden til netlify, I RIKTIG BRANCH og velg publish directory dist/ for å publisere kun dist mappen
 
-12. 
+#### Pakke CSS
+12. Kommenter ut link til css i html filen din.
 
+13. Går i index.js på ROOT og legger til import "./style.css"
+
+14. Run (for å ta seg av styling/css)
+```
+npm install --save-dev style-loader css-loader
+```
+
+15. Legg dette til i webpack.config.js under output:
+    module: {
+        rules: [
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            },
+        ],
+    },
+
+16. Run: 
+```
+npm run build
+```
+
+17. 
