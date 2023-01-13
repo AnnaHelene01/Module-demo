@@ -25,4 +25,9 @@ npm i vite
 npm run build
 ```
 
-6. 
+6. Set up site in Netlify, with CORRECT BRANCH and add
+dist/ in 
+
+Now you have packed your project in dist and deployed site with only the dist folder!
+Thanks vite
+
