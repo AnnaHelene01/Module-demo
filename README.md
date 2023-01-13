@@ -79,5 +79,3 @@ npm install --save-dev style-loader css-loader
 ```
 npm run build
 ```
-
-17. 
